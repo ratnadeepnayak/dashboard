@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Sidebar } from "../../components/sidebar/Sidebar";
 import { Navbar } from "../../components/navbar/Navbar";
 import { Widget } from "../../components/widgets/Widgets";
-import { Featured } from "../../components/featured/featured";
+import { AvgCard } from "../../components/avgCard/AvgCard";
 import { Chart } from "../../components/chart/Chart";
 import { Datatable } from "../../components/dataTable/DataTable";
 import Switch from "@mui/material/Switch";
@@ -22,7 +22,7 @@ export const Home = () => {
             {" "}
             <div className="charts">
               <Chart title="ESG Score Comparison Chart" aspect={2 / 1} />
-              <Featured />
+              <AvgCard />
             </div>
           </>
         )}

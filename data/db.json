@@ -1,95 +1,88 @@
 {
-  "todos": [
+  "esgData": [
     {
       "id": 1,
       "title": "Tesla",
-      "environment": 1,
-      "social": 1,
-      "governance": 1,
-      "cis": 3,
+      "environment": 4,
+      "social": 3,
+      "governance": 6,
+      "cis": 1,
       "profile": 4,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 2,
       "title": "Air India",
-      "environment": 1,
-      "social": 1,
-      "governance": 1,
-      "cis": 3,
-      "profile": 4,
+      "environment": 9,
+      "social": 4,
+      "governance": 11,
+      "cis": 7,
+      "profile": 9,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 4,
       "title": "Spirit",
-      "environment": 1,
-      "social": 1,
-      "governance": 1,
+      "environment": 10,
+      "social": 3,
+      "governance": 2,
       "cis": 3,
       "profile": 4,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 5,
       "title": "Bofa",
-      "environment": 1,
-      "social": 1,
+      "environment": 8,
+      "social": 3,
       "governance": 1,
-      "cis": 3,
+      "cis": 5,
       "profile": 4,
       "status": "UnRated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 6,
       "title": "Amex",
-      "environment": 1,
+      "environment": 3,
       "social": 1,
-      "governance": 1,
+      "governance": 2,
       "cis": 3,
-      "profile": 4,
+      "profile": 6,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 7,
       "title": "Discover",
-      "environment": 1,
+      "environment": 9,
       "social": 1,
-      "governance": 1,
-      "cis": 3,
+      "governance": 4,
+      "cis": 6,
       "profile": 4,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 8,
       "title": "Walmart",
-      "environment": 1,
-      "social": 1,
-      "governance": 1,
+      "environment": 3,
+      "social": 5,
+      "governance": 4,
       "cis": 3,
       "profile": 4,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 9,
@@ -101,8 +94,7 @@
       "profile": 4,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
     },
     {
       "id": 10,
@@ -114,8 +106,19 @@
       "profile": 4,
       "status": "Rated",
       "date": "2021-10-21",
-      "company": "tesla",
-      "completed": false
+      "company": "tesla"
+    },
+    {
+      "id": 11,
+      "title": "cvs",
+      "environment": 1,
+      "social": 1,
+      "governance": 1,
+      "cis": 1,
+      "profile": 1,
+      "status": "UnRated",
+      "date": "2021-10-21",
+      "company": "tesla"
     }
   ]
 }

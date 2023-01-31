@@ -1,21 +1,17 @@
 import React from "react";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useGetTableDataQuery } from "../../api/apiSlice";
-import { sumArrayValues } from "../../utils/helper";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
-import GavelIcon from "@mui/icons-material/Gavel";
 import "./Widgets.scss";
+import { getScoreData } from "./Widgets.helper";
 
 export const Widget = ({ type }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  let scoreData;
   const { data: todos = [] } = useGetTableDataQuery();
 
   const style = {
@@ -30,66 +26,13 @@ export const Widget = ({ type }) => {
     p: 4,
   };
 
-  const diff = 20;
-
-  switch (type) {
-    case "Environment":
-      scoreData = {
-        title: "Environment Avg Score",
-        link: "How is this calculated",
-        avgScore: sumArrayValues(todos.map((score) => score.environment)),
-        icon: (
-          <EmojiPeopleIcon
-            className="icon"
-            style={{
-              color: "crimson",
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
-            }}
-          />
-        ),
-      };
-      break;
-    case "Social":
-      scoreData = {
-        title: "Social Avg Score",
-        link: "How is this calculated",
-        avgScore: sumArrayValues(todos.map((score) => score.social)),
-        icon: (
-          <PersonOutlinedIcon
-            className="icon"
-            style={{
-              color: "crimson",
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
-            }}
-          />
-        ),
-      };
-      break;
-    case "Governance":
-      scoreData = {
-        title: "Governance Avg Score",
-        link: "How is this calculated",
-        avgScore: sumArrayValues(todos.map((score) => score.governance)),
-        icon: (
-          <GavelIcon
-            className="icon"
-            style={{
-              color: "crimson",
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
-            }}
-          />
-        ),
-      };
-      break;
-    default:
-      break;
-  }
+  let scoreData = getScoreData(type, todos);
 
   return (
     <div className="widget">
       <div className="left">
         <span className="title">{scoreData.title}</span>
-        <span className="counter">{scoreData.avgScore}</span>
+        <span className="counter">{scoreData.avgScore / todos.length}</span>
         <span className="link" onClick={handleOpen}>
           {scoreData.link}
         </span>
@@ -101,18 +44,24 @@ export const Widget = ({ type }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {scoreData.title}
+            {scoreData.title} is calculated by summing all of the scores in your
+            portfolio
           </Typography>
         </Box>
       </Modal>
       <div className="right">
-        <div className="percentage positive">
-          <KeyboardArrowUpIcon />
-          {diff} %
+        <div
+          className={
+            scoreData.diff >= 0 ? "percentage positive" : "percentage negative"
+          }
+        >
+          {scoreData.diff >= 0 ? (
+            <KeyboardArrowUpIcon />
+          ) : (
+            <KeyboardArrowDownIcon />
+          )}
+          {scoreData.diff} %
         </div>
         {scoreData.icon}
       </div>

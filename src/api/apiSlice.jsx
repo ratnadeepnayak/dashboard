@@ -8,28 +8,28 @@ export const apiSlice = createApi({
   tagTypes: ["Tabledata"],
   endpoints: (builder) => ({
     getTableData: builder.query({
-      query: () => "/todos",
+      query: () => "/esgData",
       providesTags: ["Tabledata"],
     }),
     addTableData: builder.mutation({
-      query: (todo) => ({
-        url: "/todos",
+      query: (data) => ({
+        url: "/esgData",
         method: "POST",
-        body: todo,
+        body: data,
       }),
       invalidatesTags: ["Tabledata"],
     }),
     updateTableData: builder.mutation({
-      query: (todo) => ({
-        url: `/todos/${todo.id}`,
+      query: (data) => ({
+        url: `/esgData/${data.id}`,
         method: "PATCH",
-        body: todo,
+        body: data,
       }),
       invalidatesTags: ["Tabledata"],
     }),
     deleteTableData: builder.mutation({
       query: ({ id }) => ({
-        url: `/todos/${id}`,
+        url: `/esgData/${id}`,
         method: "DELETE",
         body: id,
       }),

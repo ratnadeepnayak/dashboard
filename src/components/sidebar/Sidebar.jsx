@@ -19,14 +19,14 @@ export const Sidebar = () => {
       </div>
       <div className="center">
         <ul>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <li>
               <DashboardIcon className="icon" />
-              <span>ESG Dashboard</span>
+              <span style={{ textDecoration: "none" }}>ESG Dashboard</span>
             </li>
           </Link>
           <p className="title">LISTS</p>
-          <Link to="/users" style={{ textDecoration: "none" }}>
+          <Link to="/lists" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>ListView</span>

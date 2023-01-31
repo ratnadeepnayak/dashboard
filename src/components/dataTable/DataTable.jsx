@@ -33,9 +33,11 @@ export const Datatable = () => {
       environment: Math.ceil(Math.random()),
       social: Math.ceil(Math.random()),
       governance: Math.ceil(Math.random()),
+      cis: Math.ceil(Math.random()),
+      profile: Math.ceil(Math.random()),
+      status: "UnRated",
       date: "2021-10-21",
       company: "tesla",
-      completed: false,
     });
 
     setNewTermValue("");
